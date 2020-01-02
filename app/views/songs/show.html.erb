@@ -1,0 +1,11 @@
+<h1> <%= @song.name %> </h1>
+<h2> Appears on <%= @song.album.name %> </h2>
+<h3> by <%= @song.album.artist.name %> </h3>
+<br>
+<h2> Lyrics : </h2>
+<ul>
+<% @song.lyrics.map do |lyric| %>
+    <li> <%= link_to lyric.name, lyric %> </li>
+<% end %>
+</ul>
+<%= link_to "Back to all songs list", songs_path %>

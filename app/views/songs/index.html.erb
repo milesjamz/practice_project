@@ -1,0 +1,7 @@
+<h1> Liste of songes </h1>
+<ol>
+<% @songs.each do |song| %>
+    <li> 
+        <%= link_to song.name, song %> - <%= link_to song.album.name, song.album %>
+    </li>
+<% end %>
