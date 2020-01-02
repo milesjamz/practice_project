@@ -1,0 +1,13 @@
+<%= form_for @song do |form| %>
+    <p>
+    <%= form.label :name %> <br>
+    <%= form.text_field :name %>
+    </p>
+    <p>
+    <%= form.label :album_id %><br>
+    <%= form.collection_select :album_id, Album.all, :id, :name %>
+    </p>
+    <p>
+    <%= form.submit %>
+    </p>
+    <% end %>

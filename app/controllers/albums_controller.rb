@@ -8,4 +8,23 @@ def show
     @album = Album.find(params[:id])
 end
 
+def new
+    @album = Album.new
+end
+
+def create
+    @album = Album.create(albums_params)
+    if @album.save
+        redirect_to albums_path
+    else
+        erb :'/albums/new'
+    end
+end
+
+private
+
+def albums_params
+    params.require(:album).permit(:name, :artist_id)
+end
+
 end
