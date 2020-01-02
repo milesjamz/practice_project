@@ -1,0 +1,12 @@
+<h1> <%= @album.name %> </h1>
+<h2> by <%= link_to @album.artist.name, @album.artist %> </h2>
+<h3> released in <%= @album.year_released %> </h3>
+<p> Tracklist: </p>
+<ol>
+<% @album.songs.map do |song| %>
+<li>
+<%= link_to song.name, song %>
+</li>
+<% end %>
+</ol>
+<%= link_to "Back to All Albums", albums_path %>

@@ -1,0 +1,11 @@
+<h1> <%= @artist.name %> </h1>
+<p> <%= @artist.biography %> </p>
+<h3> <%= @artist.name %>'s albums: </h3>
+<ol>
+<% @artist.albums.map do |album| %>
+    <li>
+    <%= link_to album.name, album %>
+    </li>
+<% end %>
+<br><br>
+<%= link_to "Back to list of artists", artists_path %>
