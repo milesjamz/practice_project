@@ -12,6 +12,14 @@ def create
     @artist = Artist.create(artist_params)
 end
 
+def new
+    @artist = Artist.new
+end
+
+def update
+end
+
+
 private
 
 def artist_params
