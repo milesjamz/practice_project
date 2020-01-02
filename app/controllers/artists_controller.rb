@@ -10,6 +10,11 @@ end
 
 def create
     @artist = Artist.create(artist_params)
+    if @artist.save
+        redirect_to artists_path
+    else
+        erb :'artists/new'
+    end
 end
 
 def new
