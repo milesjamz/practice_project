@@ -1,6 +1,6 @@
 <h1> <%= @song.name %> </h1>
-<h2> Appears on <%= @song.album.name %> </h2>
-<h3> by <%= @song.album.artist.name %> </h3>
+<h2> Appears on <%= link_to @song.album.name, @song.album %> </h2>
+<h3> by <%= link_to @song.album.artist.name, @song.album.artist %> </h3>
 <br>
 <h2> Lyrics : </h2>
 <ul>
