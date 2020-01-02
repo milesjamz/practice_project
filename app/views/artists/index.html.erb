@@ -1,0 +1,11 @@
+<h1> liste of artistes </h1>
+<% if @artists.blank? %>
+<p>No artists currently exist in this app - sorry!</p>
+<% else %>
+
+<% @artists.each do |artist| %>
+    <ul>
+    <li> <%= artist.name %> </li>
+    </ul>
+    <% end %>
+<% end %>
