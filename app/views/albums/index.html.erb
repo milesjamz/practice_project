@@ -1,4 +1,6 @@
 <h1> liste of albumes </h1>
+<%= link_to "Add an Album", new_album_path %>
+<br><br>
 <% @albums.each do |album| %>
     <%= link_to album.name, album %>
     <% end %>
