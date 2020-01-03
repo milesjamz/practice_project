@@ -1,11 +1,11 @@
 class AlbumsController < ApplicationController
+before_action :find_album, only: [:show, :edit, :update, :destroy]
 
 def index
     @albums = Album.all
 end
 
 def show
-    @album = Album.find(params[:id])
 end
 
 def new
@@ -22,22 +22,20 @@ def create
 end
 
 def edit
-    @album = Album.find(params[:id])
 end
 
 def update
-    @album = Album.find(params[:id])
         if @album.update(album_params)
             redirect_to @album
         else
-            render :edit
+            flash[:errors] = @album.errors.full_messages
+            redirect_to edit_student_path(@album)
         end
 end
 
 def destroy
-    @album = Album.find(params[:id])
-        @album.destroy
-            redirect_to albums_path
+    @album.destroy
+        redirect_to albums_path
 end
 
 private
@@ -45,5 +43,9 @@ private
 def albums_params
     params.require(:album).permit(:name, :artist_id)
 end
+
+def find_album
+    @album = Album.find(params[:id])
+end 
 
 end

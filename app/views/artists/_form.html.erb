@@ -1,3 +1,13 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |error_message| %>
+        <li>
+        <%= error_message %>
+        </li>
+    <% end %>
+</ul>
+<% end %>
+
 <%= form_for @artist do |form| %>
     <p>
     <%= form.label :name %> <br>
