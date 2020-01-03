@@ -17,7 +17,8 @@ def create
     if @album.save
         redirect_to albums_path
     else
-        erb :'/albums/new'
+        flash[:errors] = @album.errors.full_messages
+        redirect_to new_album_path
     end
 end
 
