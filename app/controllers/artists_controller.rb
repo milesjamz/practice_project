@@ -24,6 +24,11 @@ end
 def update
 end
 
+def destroy
+    @artist = Artist.find(params[:id])
+        @artist.destroy
+            redirect_to artists_path
+end
 
 private
 

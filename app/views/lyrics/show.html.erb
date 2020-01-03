@@ -1,3 +1,7 @@
 <%= @lyric.name %>
 <br>
+<%= form_tag lyric_path, method: "DELETE" do %>
+    <%= submit_tag "Delete this lyric" %>    
+<% end %>
+<br>
 <%= link_to "Back to your song", @lyric.song %>
