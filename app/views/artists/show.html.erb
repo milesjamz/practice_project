@@ -8,6 +8,7 @@
     </li>
 <% end %>
 <br><br>
+<%= link_to "Edit #{@artist.name}", edit_artist_path(@artist) %>
 <%= form_tag artist_path, method: "DELETE" do %>
     <%= submit_tag "Delete #{@artist.name}" %>
 <% end %>

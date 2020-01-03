@@ -9,4 +9,6 @@
 </li>
 <% end %>
 </ol>
+<%= link_to "Edit #{@album.name}", edit_album_path(@album) %>
+<br>
 <%= link_to "Back to All Albums", albums_path %>

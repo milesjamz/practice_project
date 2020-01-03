@@ -13,7 +13,7 @@ def create
     if @artist.save
         redirect_to artists_path
     else
-        erb :'artists/new'
+        redirect_to new_artist_path
     end
 end
 
@@ -21,7 +21,17 @@ def new
     @artist = Artist.new
 end
 
+def edit
+    @artist = Artist.find(params[:id])
+end
+
 def update
+    @artist = Artist.find(params[:id])
+        if @artist.update(artist_params)
+            redirect_to @artist
+        else
+            render "edit"
+        end
 end
 
 def destroy
