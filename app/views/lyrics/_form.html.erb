@@ -1,0 +1,23 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |error_message| %>
+        <li>
+        <%= error_message %>
+        </li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @lyric do |form| %>
+    <p>
+    <%= form.label :song %> <br>
+    <%= form.collection_select :song_id, Song.all, :id, :name %>
+    </p>
+    <p>
+    <%= form.label :content %><br>
+    <%= form.text_area :name %>
+    </p>
+    <p>
+    <%= form.submit %>
+    </p>
+    <% end %>

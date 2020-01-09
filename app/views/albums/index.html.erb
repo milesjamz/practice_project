@@ -1,4 +1,4 @@
-<h1> liste of albumes </h1>
+<h1> Album List </h1>
 <%= link_to "Add an Album", new_album_path %>
 <br><br>
 <ol>
@@ -8,3 +8,7 @@
    </li>
     <% end %>
     </ol>
+    <br>
+    <%= link_to "Search All Artists", artists_path %> <br>
+       <%= link_to "Search All Songs", songs_path %> <br>
+          <%= link_to "Search All Lyrics", lyrics_path %>

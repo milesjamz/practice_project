@@ -1,4 +1,4 @@
-<h1> Liste of songes </h1>
+<h1> List of Songs </h1>
 <%= link_to "add a new song", new_song_path %>
 <ol>
 <% @songs.each do |song| %>
@@ -6,3 +6,7 @@
         <%= link_to song.name, song %> - <%= link_to song.album.name, song.album %>
     </li>
 <% end %>
+<br>
+    <%= link_to "Search All Artists", artists_path %> <br>
+        <%= link_to "Search All Albums", albums_path %> <br>
+          <%= link_to "Search All Lyrics", lyrics_path %>

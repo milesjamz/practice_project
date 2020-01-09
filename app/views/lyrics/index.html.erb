@@ -1,0 +1,14 @@
+<h1>Lyrics List</h1>
+<%= link_to "Add A Lyric", new_lyric_path %>
+<br><br>
+<ol>
+<% @lyrics.each do |lyric| %>
+   <li> 
+    <%= link_to lyric.name, lyric %> - <%=link_to lyric.artist.name, lyric.artist %>
+   </li>
+    <% end %>
+    </ol>
+    <br>
+    <%= link_to "Search All Artists", artists_path %> <br>
+        <%= link_to "Search All Albums", albums_path %> <br>
+            <%= link_to "Search All Songs", songs_path %> <br>

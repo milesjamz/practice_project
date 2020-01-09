@@ -15,4 +15,8 @@ def destroy
                 redirect_to @mysong
 end
 
+def new
+    @lyric = Lyric.new
+end
+
 end
