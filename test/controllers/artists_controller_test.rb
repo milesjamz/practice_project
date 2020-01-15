@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ArtistsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should have views" do
+    get :index
+    assert_response :success
+  end
 end
